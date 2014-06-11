@@ -1,6 +1,6 @@
 require 'bootstrap-sass/engine'
 
-module SpreeBootstrapFrontend
+module SpreeBootstrapFrontendCurly
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
