@@ -15,6 +15,7 @@ This has several large advantages:
 - Lots of [spree community will for bootstrap](https://groups.google.com/forum/#!searchin/spree-user/bootstrap/spree-user/B17492QdnGA/AF9vEzRzf4cJ).
 - Though this uses ‘full bootstrap’ for simplicity, you can remove the unused Bootstrap components you don’t require for minimal file sizes / weight.
 - Bootstrap is one of the largest most active open source projects out there - maintaining an entire framework just for spree makes little sense. Forget about cross browser bugs. Woo!
+- A fork of the safe template library Curly is used on the views
 
 Overview
 -------
@@ -33,12 +34,10 @@ This stays as closely to the original spree frontend markup as possible. Helper 
 Installation
 -------
 
-**NOTE: The master branch is developed agaist edge. Use a stable branch for production.**
-
-Add the following to your gemfile. The currenly supported and updated branches are `master` (edge) and `2-2-stable`
+Add the following to your gemfile. The currenly supported branch is `2-2-stable`
 
 ```ruby
-gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-2-stable'
+gem 'spree_bootstrap_frontend_curly', github: 'thelinuxlich/spree_bootstrap_frontend_curly', branch: '2-2-stable'
 ```
 
 And run
@@ -50,7 +49,7 @@ bundle install
 Then copy the default stylesheets into your project
 
 ```bash
-rails generate spree_bootstrap_frontend:install
+rails generate spree_bootstrap_frontend_curly:install
 ```
 
 Done.
@@ -59,7 +58,7 @@ Done.
 Customizing
 -------
 
-Running the above `spree_bootstrap_frontend:install` command copies the stylesheet to `app/assets/stylesheets/spree/frontend/spree_bootstrap_frontend.css.scss`. Use this as your base stylesheet and edit as required.
+Running the above `spree_bootstrap_frontend_curly:install` command copies the stylesheet to `app/assets/stylesheets/spree/frontend/spree_bootstrap_frontend.css.scss`. Use this as your base stylesheet and edit as required.
 
 To style your spree store just override the bootstrap 3 variables. The full list of bootstrap variables can be found [here](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss). You can override these by simply redefining the variable before the `@import` directive.
 For example:
@@ -81,10 +80,6 @@ It’s quite powerful, here are some examples created in ~10 minutes with a few 
 
 Contributing
 -------
-
-**Please fork and make a pull request.**
-
-Spree edge templates were last synced at [master@284dd45](https://github.com/spree/spree/commit/284dd45615ffe8443d29aa788ce19d621219ca77) feel free to patch in any newer changes and update this SHA.
 
 **Tests.** To get this to a stage that it can be maintained moving forwards getting all tests passing is the highest priority.
 
@@ -108,8 +103,3 @@ Simply add this require statement to your spec_helper:
 ```ruby
 require 'spree_bootstrap_frontend/factories'
 ```
-
-Licence
--------
-
-Copyright Alex James ([200creative.com](http://200creative.com)) and released under the BSD Licence.
