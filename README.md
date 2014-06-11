@@ -83,7 +83,7 @@ Contributing
 
 **Tests.** To get this to a stage that it can be maintained moving forwards getting all tests passing is the highest priority.
 
-- Raise bugs in github’s [issues tracker](https://github.com/200Creative/spree_bootstrap_frontend/issues).
+- Raise bugs in github’s [issues tracker](https://github.com/thelinuxlich/spree_bootstrap_frontend_curly/issues).
 - Further discussion can be had in the [spree google group](https://groups.google.com/forum/#!forum/spree-user).
 
 Running tests
