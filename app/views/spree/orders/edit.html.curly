@@ -1,0 +1,46 @@
+<div data-hook="cart_container">
+  <h1>{{ t 'shopping_cart' }}</h1>
+
+  {{^order_line_items?}}
+
+    <div data-hook="empty_cart">
+      <div class="alert alert-info">{{ t 'your_cart_is_empty' }}</div>
+      <p>{{ continue_shopping_link }}</p>
+    </div>
+
+  {{/order_line_items?}}
+  {{#order_line_items?}}
+
+    <div data-hook="outside_cart_form">
+      <form class="edit_order" id="update-cart" action="{{ update_cart_url }}" method="post">
+        {{ secure_token }}
+        <input type="hidden" name="_method" value="patch">
+        <div data-hook="inside_cart_form">
+          <div data-hook="cart_items">
+            {{ order_form }}
+          </div>
+
+          <div class="links col-md-6 navbar-form pull-right text-right" data-hook="cart_buttons">
+            <div class="form-group">
+              <input type="text" name="order[coupon_code]" size="10" placeholder="{{ t 'coupon_code'}}" class="form-control form-control-inline" value="{{ order 'coupon_code' }}">
+            </div>
+            <button type="button" class="btn btn-primary" id="update-button">{{ t 'update'}}</button>
+            <button class='btn btn-lg btn-success' id='checkout-link' name='checkout'>{{ t 'checkout' }}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="empty-cart" class="col-md-6 pull-left" data-hook>
+      <form action="{{empty_cart_url}}" method="post">
+        {{ secure_token }}
+        <input type="hidden" name="_method" value="put">
+        <p id="clear_cart_link" data-hook>
+          <input type="submit" name="commit" value="{{ t 'empty_cart' }}" class="btn btn-default">
+          {{ t 'or' }}
+          <a href="{{ continue_shopping_url }}" class='continue'>{{ t 'continue_shopping'}}</a>
+        </p>
+      </form>
+    </div>
+  {{/order_line_items?}}
+</div>

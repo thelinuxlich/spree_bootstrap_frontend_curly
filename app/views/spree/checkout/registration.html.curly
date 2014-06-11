@@ -1,0 +1,28 @@
+{{ errors }}
+<h1>{{ t 'registration' }}</h1>
+<div id="registration" class="row" data-hook>
+  <div id="account">
+    {{ new_user }
+  </div>
+  {{#allow_guest_checkout?}}
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> {{ t 'guest_user_account' }}</h3>
+        </div>
+        <div id="guest_checkout" class="panel-body" data-hook>
+          {{#registration_error?}}
+            <div class='flash error'>{{ message 'registration_error' }}</div>
+          {{/registration_error?}}
+          <form action="{{ update_checkout_registration_url }}" method="put" id="checkout_form_registration">
+            {{ secure_token }}
+            <p>
+              <input type="email" name="user[email]" class='form-control title' placeholder="{{ t 'email'}}" value="{{ user 'email' }}">
+            </p>
+            <p><input type="submit" name="commit" value=" {{ t 'continue' }}" class='btn btn-lg btn-success btn-block'>
+          </form>
+        </div>
+      </div>
+    </div>
+  {{/allow_guest_checkout?}}
+</div>

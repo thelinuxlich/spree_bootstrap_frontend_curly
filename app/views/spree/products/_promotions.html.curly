@@ -1,0 +1,18 @@
+{{#promotions?}}
+  <div id="promotions">
+    <h3>{{ t 'promotions' }}</h3>
+    {{#promotions}}
+      <div class="well well-sm">
+        <h4>{{ name }}</h4>
+        <p>{{ description }}</p>
+        {{#products?}}
+          <ul>
+            {{#products}}
+              <li>{{ product_link }}</li>
+            {{/products}}
+          </ul>
+        {{/products?}}
+      </div>
+    {{/promotions}}
+  </div>
+{{/promotions?}}

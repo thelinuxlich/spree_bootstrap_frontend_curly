@@ -1,0 +1,6 @@
+{{#shipments?}}
+  <h6>{{ tracking_text }}</h6>
+  <div class="tracking">
+    {{ shipment_tracking_links }}
+  </div>
+{{/shipments?}}

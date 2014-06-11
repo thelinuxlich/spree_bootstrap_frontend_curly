@@ -1,0 +1,68 @@
+<div class="panel panel-default" id="payment" data-hook>
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ t 'payment_information' }}</h3>
+  </div>
+  <div class="panel-body" data-hook="checkout_payment_step">
+    {{#payment_sources?}}
+      <div class="card_options">
+        <%= radio_button_tag 'use_existing_card', 'yes', true %>
+        <label for="use_existing_card_yes">Use an existing card on file</label>
+        <br/>
+        <%= radio_button_tag 'use_existing_card', 'no' %>
+        <label for="use_existing_card_no">Use a new card / payment method</label>
+      </div>
+      <div id="existing_cards">
+        <p class="field" data-hook="existing_cards">
+          <table class="existing-credit-card-list">
+            <tbody>
+              {{#payment_sources}}
+                <tr id="{{ payment_source_dom_id }}" class="{{ payment_source_class }}">
+                  <td>{{ name }}</td>
+                  <td>{{ display_number }}</td>
+                  <td>{{ month }}</td>
+                  <td>{{ year }}</td>
+                  <td>
+                    <input type="radio" name="existing_card" value="{{ payment_id }}" {{ existing_card_checked }} class="existing-cc-radio">
+                  </td>
+                </tr>
+              {{/payment_sources}}
+            </tbody>
+          </table>
+        </p>
+      </div>
+    {{/payment_sources?}}
+
+    <ul class="list-group" id="payment-method-fields" data-hook>
+      {{#payment_methods}}
+        <li class="list-group-item">
+          <label>
+            <input type="radio" name="order[payments_attributes][][payment_method_id]"
+            value="{{method_id}}" {{ method_id_checked }}>
+            {{ method_name }}
+          </label>
+        </li>
+      {{/payment_methods}}
+    </ul>
+
+    <ul class="nav" id="payment-methods" data-hook>
+      {{#payment_methods}}
+        <li id="payment_method_{{method_id}}" class="{{ method_class }}" data-hook>
+          <fieldset>
+            {{ payment_method_type }}
+          </fieldset>
+        </li>
+      {{/payment_methods}}
+    </ul>
+
+    <p class='field' data-hook='coupon_code'>
+      <label for="order[coupon_code]">Coupon Code</label>
+      <br />
+      <input type="text" name="order[coupon_code]" class="form-control" value="{{ coupon_code }}">
+    </p>
+  </div>
+</div>
+
+<div class="well text-right form-buttons" data-hook="buttons">
+  <input type="submit" name="commit" class='btn btn-lg btn-success' value="{{ t 'save_and_continue' }}">
+  <script>Spree.disableSaveOnClick();</script>
+</div>

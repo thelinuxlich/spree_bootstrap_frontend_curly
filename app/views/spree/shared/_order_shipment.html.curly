@@ -1,0 +1,4 @@
+<tr class="total" data-hook='shipment-row'>
+    <td colspan="4" align="right" class="text-muted">{{ t 'shipping' }}: <strong>{{ name }}</strong></td>
+    <td class="total"><span>{{ total }}</span></td>
+</tr>

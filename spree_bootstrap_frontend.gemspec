@@ -1,15 +1,15 @@
 # encoding: UTF-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_bootstrap_frontend'
+  s.name        = 'spree_bootstrap_frontend_curly'
   s.version     = '2.2.0'
-  s.summary     = 'Switches out Spree’s entire frontend for a bootstrap 3 powered frontend'
+  s.summary     = 'Switches out Spree’s entire frontend for a bootstrap 3 powered frontend with curly safe templates'
   s.description = s.summary
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.0.0'
 
-  s.author    = 'Alex James'
-  s.email     = 'alex.james@200creative.com'
-  s.homepage  = 'http://www.200creative.com'
+  s.author    = 'Alisson Cavalcante Agiani'
+  s.email     = 'thelinuxlich@gmail.com'
+  s.homepage  = 'http://github.com/thelinuxlich'
 
   s.files       = `git ls-files`.split("\n")
   s.test_files  = `git ls-files -- spec/*`.split("\n")

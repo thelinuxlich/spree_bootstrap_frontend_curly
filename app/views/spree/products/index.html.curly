@@ -1,0 +1,17 @@
+{{ sidebar }}
+
+{{#keywords?}}
+  <div data-hook="search_results">
+    {{#products?}}
+      {{ products }}
+    {{/products?}}
+    {{^products?}}
+      <h6 class="search-results-title">{{ t 'no_products_found' }}</h6>
+    {{/products?}}
+  </div>
+{{/keywords?}}
+{{^keywords?}}
+  <div data-hook="homepage_products">
+      {{ products }}
+  </div>
+{{/keywords?}}

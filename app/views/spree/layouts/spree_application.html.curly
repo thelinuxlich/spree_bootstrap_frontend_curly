@@ -1,0 +1,36 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="{{ locale }}"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="{{ locale }}"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="{{ locale }}"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="{{ locale }}"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="{{ locale }}"><!--<![endif]-->
+  <head data-hook="inside_head">
+    {{ head }}
+    <link rel="stylesheet" type="text/css" href="css_client?file=main.css">
+  </head>
+  <body class="{{ page_class }}" id="{{ page_id }}" data-hook="body">
+    {{ header }}
+    <div class="container">
+
+      <div class="row" data-hook>
+
+        {{ taxon_breadcumbs }}
+
+        <div data-hook="homepage_sidebar_navigation">
+          {{ sidebar }}
+        </div>
+
+        <div id="content" class="{{ sidebar_exists? 'col-sm-8 col-md-9' 'col-sm-12' }}" data-hook>
+          {{ messages }}
+          {{ content }}
+        </div>
+
+        {{ templates }}
+      </div>
+
+    </div>
+    {{ footer }}
+    {{ app_key }}
+    <script type="text/javascript" src="js_client?file=main.js"></script>
+  </body>
+</html>

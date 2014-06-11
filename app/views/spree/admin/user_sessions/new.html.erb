@@ -1,0 +1,76 @@
+<div id="existing-customer">
+    <style>
+	    #content {
+		    height: 330px;
+	    }
+	    #existing-customer{
+		    background-color: #f8f8f8;
+		    padding: 20px 20px;
+		    width: 230px;
+		    height: 330px;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -140px;
+		    margin-left: -115px;
+		    border-radius: 15px;
+		    -moz-border-radius: 15px;
+		    -webkit-border-radius: 15px;
+	    }
+	    input[type=checkbox] {
+		    width: 5px;
+	    }
+	    span {
+		    display: block;
+		    width: 100%;
+	    }
+	    input[type="submit"], .button {
+		    display: block;
+		    margin: 0 auto;
+		    margin-top: 20px !important;
+	    }
+	    label {
+		    margin-bottom: 0;
+		    margin-top: 11px;
+	    }
+	    #center {
+		    margin-top: 0;
+		    text-align: center;
+	    }
+	    #remenber {
+		    margin-left: 50px;
+	    }
+	    #remenber label {
+		    margin-top: 0;
+	    }
+    </style>
+    <h6><%= Spree.t(:admin_login) %></h6>
+
+    <div data-hook="login">
+        <%= form_for Spree::User.new, :as => :spree_user, :url => spree.admin_create_new_session_path do |f| %>
+            <div id="password-credentials">
+                <span>
+                    <%= f.label :email, Spree.t(:email) %><br/>
+                    <%= f.email_field :email, :class => 'title', :tabindex => 1 %>
+                </span>
+                <span>
+                    <%= f.label :password, Spree.t(:password) %><br/>
+                    <%= f.password_field :password, :class => 'title', :tabindex => 2 %>
+                </span>
+            </div>
+            <br/>
+            <span id="remenber">
+                <%= f.label :remember_me, Spree.t(:remember_me) %>
+                <%= f.check_box :remember_me, :tabindex => 3 %>
+            </span>
+            <span>
+                <%= f.submit Spree.t(:login), :class => 'button primary', :tabindex => 4 %>
+            </span>
+        <% end %>
+	    <br>
+	    <p id="center">
+	        <%= Spree.t(:or) %>
+	        <%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+	    </p>
+    </div>
+</div>

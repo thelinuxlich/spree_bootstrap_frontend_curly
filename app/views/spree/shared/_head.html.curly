@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<title>{{ title_text }}</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+{{ meta }}
+{{ canonical }}
+{{ favicon }}
+{{ main_css }}
+{{ csrf }}
+{{ main_js }}
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+<![endif]-->
+{{ head }}

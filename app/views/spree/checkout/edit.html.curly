@@ -1,0 +1,42 @@
+<div id="checkout" data-hook>
+  {{ errors }}
+  <div class="row" data-hook="checkout_header">
+    <div class="col-sm-3">
+      <h1 data-hook="checkout_title">{{ t 'checkout' }}</h1>
+    </div>
+    <div class="col-sm-9" data-hook="checkout_progress">{{ checkout_in_progress }}</div>
+  </div>
+
+  <div class="row" data-hook="checkout_content">
+    <div class="{{ checkout_content_class }}" data-hook="checkout_form_wrapper">
+      <form action="{{ update_checkout_url }}" id="{{ checkout_form_id }}" method="post">
+        {{ secure_token }}
+        <input type="hidden" name="_method" value="patch">
+        {{^order_email?}}
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p class="field" style='clear: both'>
+                <label for="order[email]">E-mail</label>
+                <br />
+                <input type="email" name="order[email]" value="{{ order 'email' }}">
+              </p>
+            </div>
+          </div>
+        {{/order_email?}}
+        {{ order_state_form }}
+      </form>
+    </div>
+    {{^order_state_confirm?}}
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-3">
+        {{ summary }}
+      </div>
+    {{/order_state_confirm?}}
+  </div>
+</div>
+
+<script>
+Spree.current_order_id = "{{ order 'number' }}"
+Spree.current_order_token = "{{ order 'token' }}"
+</script>
+
+{{ l10n_js_script }}

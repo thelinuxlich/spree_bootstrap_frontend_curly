@@ -1,0 +1,7 @@
+{{#current_user?}}
+    <li>{{ my_account_link }}</li>
+    <li>{{ logout_link }}</li>
+{{/current_user?}}
+{{^current_user?}}
+    <li id="link-to-login">{{ login_link }}</li>
+{{/current_user?}}

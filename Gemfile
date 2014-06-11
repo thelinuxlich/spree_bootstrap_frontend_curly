@@ -10,6 +10,7 @@ end
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.0'
+gem 'curly-templates', github: 'thelinuxlich/curly'
 
 group :test do
   gem 'capybara', '~> 2.1'

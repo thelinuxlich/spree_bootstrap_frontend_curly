@@ -1,0 +1,43 @@
+<h1>{{ user_title }}</h1>
+
+<div data-hook="account_summary" class="account-summary well">
+  <dl id="user-info">
+    <dt>{{ t 'email' }}</dt>
+    <dd>{{ user 'email' }} ({{ edit_user_link }})</dd>
+  </dl>
+</div>
+
+<div data-hook="account_my_orders" class="account-my-orders">
+
+  <h3>{{ t 'my_orders' }}</h3>
+  {{#orders?}}
+    <table class="table table-striped order-summary">
+      <thead class="active">
+      <tr>
+        <th class="order-number">{{ t 'order_number' }}></th>
+        <th class="order-date">{{ t 'date' }}</th>
+        <th class="order-status">{{ t 'status' }}</th>
+        <th class="order-payment-state">{{ t 'payment_state' }}</th>
+        <th class="order-shipment-state">{{ t 'shipment_state' }}</th>
+        <th class="order-total">{{ t 'total' }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#orders}}
+        <tr>
+          <td class="order-number">{{ order_number_link }}</td>
+          <td class="order-date">{{ order_completed_date }}</td>
+          <td class="order-status">{{ order_state }}</td>
+          <td class="order-payment-state">{{ payment_state }}</td>
+          <td class="order-shipment-state">{{ shipment_state }}</td>
+          <td class="lead text-primary order-total">{{ total }}</td>
+        </tr>
+      {{/orders}}
+      </tbody>
+    </table>
+  {{/orders?}}
+  {{^orders?}}
+    <div class="alert alert-info">{{ t 'you_have_no_orders_yet' }}</div>
+  {{/orders?}}
+  <br />
+</div>

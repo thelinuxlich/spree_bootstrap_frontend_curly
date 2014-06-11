@@ -1,0 +1,10 @@
+{{#errors?}}
+  <div id="errorExplanation" class="alert alert-danger" data-hook>
+    <h3>{{ errors_count }}:</h3>
+    <p>{{ errors_disclaimer }}:</p>
+     <ul>
+      {{ errors }}
+     </ul>
+     <br/>
+  </div>
+{{/errors?}}

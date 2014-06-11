@@ -1,0 +1,9 @@
+<nav class="navbar col-md-8" id="top-nav-bar">
+  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+    {{ login_bar }}
+    <li id="search-bar" data-hook>
+        {{ search }}
+    </li>
+  </ul>
+
+</nav>

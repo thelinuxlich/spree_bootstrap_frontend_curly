@@ -1,0 +1,11 @@
+<h1 class="taxon-title">{{taxon_name}}</h1>
+
+<div data-hook="taxon_products">
+  {{ products }}
+</div>
+
+{{^keywords?}}
+  <div data-hook="taxon_children">
+    {{ taxon }}
+  </div>
+{{/keywords?}}

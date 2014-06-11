@@ -1,0 +1,17 @@
+{{ pagination_links }}
+
+{{^products?}}
+  {{ t 'no_products_found' }}
+{{/products?}}
+{{#keywords?}}
+  <h6 class="search-results-title">{{ t 'search_results_title' }}</h6>
+{{/keywords?}}
+
+{{#products?}}
+<div id="products" class="row" data-hook>
+    {{ products }}
+    {{ reset_cycle_classes }}
+</div>
+{{/products?}}
+
+{{ products_pagination }}

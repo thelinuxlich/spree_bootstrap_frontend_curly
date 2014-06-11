@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-6" data-hook="billing_fieldset_wrapper">
+    <div class="panel panel-default" id="billing" data-hook>
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ t 'billing_address' }}</h3>
+      </div>
+      <div class="panel-body">
+        {{ bill_form }}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6" data-hook="shipping_fieldset_wrapper">
+    <div class="panel panel-default" id="shipping" data-hook>
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ t 'shipping_address'}}</h3>
+      </div>
+      <div class="panel-body">
+        <p class="field checkbox" data-hook="use_billing">
+          <input type="checkbox" name="order[use_billing]" value="1" {{ use_billing_checked }}>
+          <label for="order[use_billing]" id="use_billing">{{ t 'use_billing_address'}}</label>
+        </p>
+        {{ shipping_form }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="well text-right form-buttons" data-hook="buttons">
+  <input type="submit" name="commit" value="{{ t 'save_and_continue' }}" class='btn btn-lg btn-success'>
+  <span data-hook="save_user_address">
+    &nbsp; &nbsp;
+    <input type="checkbox" name="save_user_address" value="1" {{ save_user_address_checked }}>
+    <label for="save_user_address">{{ t 'save_my_address'}}</label>
+  </span>
+</div>

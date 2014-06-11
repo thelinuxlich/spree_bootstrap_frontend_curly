@@ -1,0 +1,6 @@
+<div class="navigation" data-hook="navigation">
+  <h4 class="filter-title"> {{ name }} </h4>
+  <ul class="list-group">
+    {{ labels }}
+  </ul>
+</div>

@@ -1,0 +1,90 @@
+<div class="row steps-data">
+
+  {{#order_has_step_address?}}
+
+    {{#order_has_step_delivery?}}
+      <div class="col-md-3" data-hook="order-ship-address">
+        <h4>{{ t 'shipping_address' }} {{ edit_address_link }}</h4>
+        {{ address }}
+      </div>
+    {{/order_has_step_delivery?}}
+
+    <div class="col-md-3" data-hook="order-bill-address">
+      <h4>{{ t 'billing_address' }} {{ edit_address_link }}</h4>
+      {{ billing_address }}
+    </div>
+
+    {{#own_order_has_step_delivery?}}
+      <div class=" col-md-3">
+        <h4>{{ t 'shipments' }} {{ edit_delivery_link }}</h4>
+        <div class="delivery">
+          {{ shipments }}
+        </div>
+        {{ shipment_tracking }}
+      </div>
+    {{/own_order_has_step_delivery?}}
+  {{/order_has_step_address?}}
+
+  <div class="col-md-3">
+    <h4>{{ t 'payment_information' }}</h4>
+    <div class="payment-info">
+      {{ payments }}
+    </div>
+  </div>
+
+</div>
+
+<hr />
+
+<table id='line-items' class="table" data-hook="order_details">
+  <col width="15%" valign="middle" halign="center">
+  <col width="70%" valign="middle">
+  <col width="5%" valign="middle" halign="center">
+  <col width="5%" valign="middle" halign="center">
+  <col width="5%" valign="middle" halign="center">
+
+  <thead data-hook>
+    <tr class="active" data-hook="order_details_line_items_headers">
+      <th colspan="2">{{ t 'item' }}</th>
+      <th class="price">{{ t 'price' }}</th>
+      <th class="qty">{{ t 'qty' }}</th>
+      <th class="total"><span>{{ t 'total' }}</span></th>
+    </tr>
+  </thead>
+
+  <tbody data-hook>
+    {{ order_line_items }}
+  </tbody>
+  <tfoot id="order-total" data-hook="order_details_total">
+    <tr class="warning total">
+      <td colspan="4" align="right"><b>{{ t 'order_total' }}:</b></td>
+      <td class="total"><span id="order_total" class="lead text-primary">{{ order_display_total }}</span></td>
+    </tr>
+  </tfoot>
+
+  <tfoot id="subtotal" data-hook="order_details_subtotal">
+    <tr class="total" id="subtotal-row">
+      <td colspan="4" align="right"><b>{{ t 'subtotal' }}:</b></td>
+      <td class="total"><span>{{ order_display_item_total }}</span></td>
+    </tr>
+  </tfoot>
+  {{#order_line_item_adjustments?}}
+    {{#order_all_adjustments_promotion_eligible?}}
+      <tfoot id="price-adjustments" data-hook="order_details_price_adjustments">
+        {{ adjustments_promotion }}
+     </tfoot>
+    {{/order_all_adjustments_promotion_eligible?}}
+  {{/order_line_item_adjustments?}}
+
+  {{#order_all_adjustments_tax?}}
+    <tfoot id="tax-adjustments" data-hook="order_details_tax_adjustments">
+      {{ adjustments_tax }}
+    </tfoot>
+  {{/order_all_adjustments_tax?}}
+  <tfoot id='shipment-total'>
+    {{ order_shipments }}
+  </tfoot>
+  <tfoot id="order-charges" data-hook="order_details_adjustments">
+    {{ order_adjustments }}
+  </tfoot>
+</table>

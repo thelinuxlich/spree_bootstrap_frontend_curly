@@ -1,0 +1,23 @@
+<thead>
+  <tr data-hook="cart_adjustments_headers">
+    <th class="cart-adjustment-header" colspan="6">{{ t 'order_adjustments' }}</th>
+  </tr>
+</thead>
+<tbody id="cart_adjustments" data-hook>
+  {{#line_item_adjustments?}}
+    {{ adjustments_promotion_eligible_row }}
+  {{/line_item_adjustments}}
+
+  {{ adjustments_tax_eligible_row }}
+
+  {{#shipments}}
+    <tr>
+      <td colspan="4" align='right'><h5>{{ t 'shipping' }}: {{ shipping_method_name }}</h5></td>
+      <td colspan='2'>
+        <h5>{{ display_discounted_cost }}</h5>
+      </td>
+    </tr>
+  {{/shipments}}
+
+  {{ adjustments_eligible_row }}
+</tbody>

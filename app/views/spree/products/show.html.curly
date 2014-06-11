@@ -1,0 +1,45 @@
+<div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
+  <div class="col-md-4" data-hook="product_left_part">
+    <div data-hook="product_left_part_wrap">
+
+      <div id="product-images" data-hook="product_images">
+        <div id="main-image" class="panel panel-default" data-hook>
+          <div class="panel-body text-center">
+            {{ image }}
+          </div>
+        </div>
+        <div id="thumbnails" data-hook>
+          {{ thumbnails }}
+        </div>
+      </div>
+
+      <div data-hook="product_properties">
+        {{ properties }}
+      </div>
+
+      <div data-hook="promotions">
+        {{ promotions }}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8" data-hook="product_right_part">
+    <div data-hook="product_right_part_wrap">
+
+      <div id="product-description" data-hook="product_description">
+
+        <h1 class="product-title" itemprop="name">{{ title }}</h1>
+
+        <div class="well" itemprop="description" data-hook="description">
+          {{ description }}
+        </div>
+
+        <div id="cart-form" data-hook="cart_form">
+          {{ cart_form }}
+        </div>
+
+      </div>
+      {{ taxons }}
+    </div>
+  </div>
+</div>

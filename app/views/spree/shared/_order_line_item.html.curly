@@ -1,0 +1,13 @@
+<tr data-hook="order_details_line_item_row">
+  <td data-hook="order_item_image">
+    {{ small_image_variant_link }}
+  </td>
+  <td data-hook="order_item_description">
+    <h4>{{ variant_name }}</h4>
+    {{ variant_description }}
+    {{ variant_options }}
+  </td>
+  <td data-hook="order_item_price" class="lead text-primary price"><span>{{ single_money }}</span></td>
+  <td data-hook="order_item_qty">{{ quantity }}</td>
+  <td data-hook="order_item_total" class="lead text-primary total"><span>{{ display_amount }}</span></td>
+</tr>

@@ -1,0 +1,4 @@
+<tr class="total">
+  <td colspan="4" align="right" class="text-muted">{{ t 'tax' }}: <strong>{{ label }}</strong></td>
+  <td class="total"><span>{{ total }}</span></td>
+</tr>

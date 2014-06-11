@@ -1,0 +1,23 @@
+{{ errors }}
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ t 'new_customer' }}</h3>
+    </div>
+      <div id="new-customer" class="panel-body" data-hook="login">
+          <form class="spree_user" id="spree_user" action="{{ registration_path }}" method="post">
+            {{ secure_token }}
+            <div data-hook="signup_inside_form">
+              {{ user_form }}
+              <p>
+                <input type="submit" name="commit" class="btn btn-lg btn-success btn-block" value="{{ t 'create' }}"></p>
+            </div>
+          </form>
+          <div class="text-center">
+            {{ t 'or' }}
+            {{ login_as_existing_link }}
+          </div>
+          <div data-hook="login_extras"></div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{{#taxons?}}
+  <div id="taxon-crumbs" data-hook class=" five ">
+    <h3 class="product-section-title">{{ t 'look_for_similar_items' }}</h3>
+
+    <div data-hook="product_taxons">
+      <ul class="list-group" id="similar_items_by_taxon" data-hook>
+      {{#taxons}}
+        <li class="list-group-item">{{ taxon_link }}</li>
+      {{/taxons}}
+      </ul>
+    </div>
+
+  </div>
+{{/taxons?}}

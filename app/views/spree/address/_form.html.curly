@@ -1,0 +1,78 @@
+<div class="inner" data-hook="
+{{ address_type}}_inner"
+  <p class="field" id="{{ address_dom_id 'firstname' }}">
+    <label for="address[firstname]">{{ t 'first_name' }}</label>
+    <span class="required">*</span><br />
+    <input type="text" name="address[firstname]" class="form-control required" value="{{ address 'firstname' }}">
+  </p>
+  <p class="field" id="{{ address_dom_id 'lastname'}}">
+    <label for="address[lastname]">{{ t 'last_name' }}</label>
+    <span class="required">*</span><br />
+    <input type="text" name="address[lastname]" class="form-control required" value="{{ address 'lastname' }}">
+  </p>
+
+  {{#company?}}
+    <p class="field" id="{{ address_dom_id 'company'}}">
+      <label for="address[company]">{{ t 'company' }}</label>
+      <br />
+      <input type="text" name="address[company]" class='form-control'>
+    </p>
+  {{/company?}}
+  <p class="field" id="{{ address_dom_id 'address1' }}">
+    <label for="address[address1]">{{ t 'street_address' }}</label>
+    <span class="required">*</span><br />
+    <input type="text" name="address[address1]" class="form-control  required" value="{{ address 'address1' }}">
+  </p>
+  <p class="field" id="{{ address_dom_id 'address2' }}">
+    <label for="address[address2]">{{ t 'street_address_2' }}</label>
+    <br />
+    <input type="text" name="address[address2]" class="form-control" value="{{ address 'address2' }}">
+  </p>
+  <p class="field" id="{{ address_dom_id 'city' }}">
+    <label for="address[city]">{{ t 'city' }}</label>
+    <span class="required">*</span><br />
+    <input type="text" name="address[city]" class="form-control required" value="{{ address 'city' }}">
+  </p>
+  <p class="field" id="{{ address_dom_id 'country' }}">
+    <label for="address[country_id]">{{ t 'country' }}</label>
+    <span class="required">*</span><br />
+    <span id="{{ address_dom_id 'country-selection' }}">
+      <select name="address[country_id]" class="form-control required">
+        {{#countries}}
+        <option value="{{ id }}" {{ is_selected }}>{{ name }}</option>
+        {{/countries}}
+      </select>
+    </span>
+  </p>
+
+  {{#address_requires_state?}}
+    <p class="field" id="{{ address_dom_id 'state' }}">
+      <label for="address[state]">{{ t 'state' }}</label>
+      <span class='required' id="{{ address_dom_id 'state-required' }}">*</span><br/>
+
+      <script type="text/javascript">
+        $("#{{address_dom_id 'state' }}").append("{{ state_elements }}");
+      </script>
+    </p>
+      <noscript>
+        <input type="text" name="address[state_name]" value="{{ address 'state_name' }}" class='form-control required'>
+      </noscript>
+  {{/address_requires_state?}}
+
+  <p class="field" id="{{ address_dom_id 'zipcode' }}" >
+    <label for="address[zipcode]">{{ t 'zip' }}</label>
+    <span class="required">*</span><br />
+    <input type="text" name="address[zipcode]" class="form-control required" value="{{ address 'zipcode' }}">
+  </p>
+  <p class="field" id="{{ address_dom_id 'phone' }}">
+    <label for="address[phone]">{{ t 'phone' }}</label><span class="required">*</span><br />
+    <input type="phone" name="address[phone]" class="form-control required" value="{{ address 'phone' }}">
+  </p>
+  {{#alternative_shipping_phone?}}
+    <p class="field" id="{{ address_dom_id 'altphone' }}">
+      <label for="address[alternative_phone]">{{ t 'alternative_phone' }}</label>
+      <br />
+      <input type="phone" name="address[alternative_phone] class="form-control" value="{{ address 'alternative_phone' }}"">
+    </p>
+  {{/alternative_shipping_phone?}}
+</div>

@@ -1,0 +1,4 @@
+<tr class="total">
+    <td colspan="4">{{ t 'promotion' }}: <strong>{{ label }}</strong></td>
+    <td class="total"><span>{{ total }}</span></td>
+</tr>

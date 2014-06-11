@@ -1,0 +1,11 @@
+<li>
+  <input type="radio" name="variant_id" data-price="{{ price }}" {{ is_checked }} value="{{ variant_id }}">
+  <label for="variant_id">
+    <span class="variant-description">
+      {{ options }}
+    </span>
+    {{#price?}}
+      <span class="price diff">{{ price }}</span>
+    {{/price?}}
+  </label>
+</li>

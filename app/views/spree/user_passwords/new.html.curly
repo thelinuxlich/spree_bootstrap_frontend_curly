@@ -1,0 +1,22 @@
+{{ errors }}
+<div class="col-md-6 col-md-offset-3" id="forgot-password">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ t 'forgot_password' }}</h3>
+    </div>
+    <div class="panel-body">
+      <p>{{ t 'instructions_to_reset_password_text' }}</p>
+
+      <form class="new_spree_user" id="new_spree_user" action="{{ reset_password_path }}" method="post">
+        <p>
+          <label for="spree_user[email]">{{ t 'email' }}</label>
+          <br />
+          <input type="email" name="spree_user[email]" class="form-control" value="{{ user 'email' }}">
+        </p>
+        <p>
+          <input type="submit" name="commit" class="btn btn-lg btn-success btn-block" value="{{ t 'reset_password'}}">
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

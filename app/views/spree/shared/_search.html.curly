@@ -1,0 +1,9 @@
+<form action="{{ products_path }}" method="get" class="navbar-form">
+<div class="form-group">
+  {{ taxons_select }}
+</div>
+<div class="form-group">
+  <input type="search" name="keywords" placeholder="{{ t 'search' }}" class="form-control" value="{{ keywords }}">
+</div>
+<input class="btn btn-success" type="submit" value="{{ t 'search' }}">
+</form>
