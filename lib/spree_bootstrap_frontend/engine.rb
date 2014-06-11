@@ -4,7 +4,7 @@ module SpreeBootstrapFrontend
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_bootstrap_frontend'
+    engine_name 'spree_bootstrap_frontend_curly'
 
     config.autoload_paths += %W(#{config.root}/lib)
 
