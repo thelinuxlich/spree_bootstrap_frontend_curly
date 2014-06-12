@@ -1,7 +1,7 @@
 class Spree::Checkout::EditPresenter < Spree::CommonPresenter
 
     presents :order
-    presents :differentiator
+    presents :differentiator, default: nil
     presents :payment_sources, default: nil
 
     def errors
