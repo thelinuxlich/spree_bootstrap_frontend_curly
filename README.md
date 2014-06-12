@@ -34,6 +34,7 @@ Installation
 Add the following to your gemfile. The currenly supported branch is `2-2-stable`
 
 ```ruby
+gem 'curly-templates', github: 'thelinuxlich/curly'
 gem 'spree_bootstrap_frontend_curly', github: 'thelinuxlich/spree_bootstrap_frontend_curly', branch: '2-2-stable'
 ```
 
