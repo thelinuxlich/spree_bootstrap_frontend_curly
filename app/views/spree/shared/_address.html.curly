@@ -1,38 +1,38 @@
 <div class="address vcard">
-  <div class="fn">{{ full_name }}</div>
+  <div class="fn">{{full_name}}</div>
   {{#company?}}
     <div class="org">
-      {{ company }}
+      {{company}}
     </div>
   {{/company?}}
   <div class="adr">
     <div class="street-address">
       <div class="street-address-line">
-        {{ address1 }}
+        {{address1}}
       </div>
       {{#address2?}}
         <div class="street-address-line">
-          {{ address2 }}
+          {{address2}}
         </div>
       {{/address2?}}
     </div>
     <div class="local">
-      <span class="locality">{{ city }}</span>
-      <span class="region">{{ state }}</span>
-      <span class="postal-code">{{ zipcode }}</span>
-      <div class="country-name">{{ country }}</div>
+      <span class="locality">{{city}}</span>
+      <span class="region">{{state}}</span>
+      <span class="postal-code">{{zipcode}}</span>
+      <div class="country-name">{{country}}</div>
     </div>
   </div>
   {{#phone?}}
     <div class="tel">
-      <span class="type">{{ t 'phone' }}</span>
-      {{ phone }}
+      <span class="type">{{translate text='phone'}}</span>
+      {{phone}}
     </div>
   {{/phone?}}
   {{#alternative_phone?}}
     <div class="alternative-phone tel">
-      <span class="type">{{ t 'alternative_phone' }}</span>
-      {{ alternative_phone }}
+      <span class="type">{{translate text='alternative_phone'}}</span>
+      {{alternative_phone}}
     </div>
   {{/alternative_phone?}}
 </div>

@@ -1,36 +1,49 @@
 <!doctype html>
-<!--[if lt IE 7 ]> <html class="ie ie6" lang="{{ locale }}"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7" lang="{{ locale }}"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8" lang="{{ locale }}"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9" lang="{{ locale }}"> <![endif]-->
-<!--[if gt IE 9]><!--><html lang="{{ locale }}"><!--<![endif]-->
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="{{locale}}"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="{{locale}}"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="{{locale}}"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="{{locale}}"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="{{locale}}"><!--<![endif]-->
   <head data-hook="inside_head">
-    {{ head }}
+    {{head}}
     <link rel="stylesheet" type="text/css" href="css_client?file=main.css">
   </head>
-  <body class="{{ page_class }}" id="{{ page_id }}" data-hook="body">
-    {{ header }}
+  <body class="{{page_class}}" id="{{page_id}}" data-hook="body">
+    {{header}}
     <div class="container">
 
       <div class="row" data-hook>
 
-        {{ taxon_breadcumbs }}
+        {{taxon_breadcumbs}}
 
         <div data-hook="homepage_sidebar_navigation">
-          {{ sidebar }}
+          {{sidebar}}
         </div>
 
-        <div id="content" class="{{ sidebar_exists? 'col-sm-8 col-md-9' 'col-sm-12' }}" data-hook>
-          {{ messages }}
-          {{ content }}
+        <div id="content" class="{{sidebar_exists? class1='col-sm-8 col-md-9' class2='col-sm-12'}}" data-hook>
+          {{messages}}
+          {{content}}
         </div>
 
-        {{ templates }}
+        {{templates}}
       </div>
 
     </div>
-    {{ footer }}
-    {{ app_key }}
+    {{footer}}
+    {{app_key}}
+    <script>
+      if (Spree === undefined) {
+        var Spree = {}
+      }
+      if (Spree.routes == undefined) {
+        Spree.routes = {}
+      }
+      Spree.routes.states_search = "/api/states"
+      Spree.routes.apply_coupon_code = function(order_id) {
+        return "/api/orders/" + order_id + "/apply_coupon_code"
+      }
+      Spree.routes.root = "http://store1.yebo.com.br/"
+    </script>
     <script type="text/javascript" src="js_client?file=main.js"></script>
   </body>
 </html>

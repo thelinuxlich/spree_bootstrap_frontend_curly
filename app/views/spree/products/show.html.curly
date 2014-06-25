@@ -5,20 +5,20 @@
       <div id="product-images" data-hook="product_images">
         <div id="main-image" class="panel panel-default" data-hook>
           <div class="panel-body text-center">
-            {{ image }}
+            {{image}}
           </div>
         </div>
         <div id="thumbnails" data-hook>
-          {{ thumbnails }}
+          {{thumbnails}}
         </div>
       </div>
 
       <div data-hook="product_properties">
-        {{ properties }}
+        {{properties}}
       </div>
 
       <div data-hook="promotions">
-        {{ promotions }}
+        {{promotions}}
       </div>
     </div>
   </div>
@@ -28,18 +28,18 @@
 
       <div id="product-description" data-hook="product_description">
 
-        <h1 class="product-title" itemprop="name">{{ title }}</h1>
+        <h1 class="product-title" itemprop="name">{{title}}</h1>
 
         <div class="well" itemprop="description" data-hook="description">
-          {{ description }}
+          {{description}}
         </div>
 
         <div id="cart-form" data-hook="cart_form">
-          {{ cart_form }}
+          {{cart_form}}
         </div>
 
       </div>
-      {{ taxons }}
+      {{taxons}}
     </div>
   </div>
 </div>

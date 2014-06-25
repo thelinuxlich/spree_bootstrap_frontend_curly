@@ -1,11 +1,11 @@
 {{#credit_card?}}
   <span class="cc-type">
-    {{ cc_type_img }}
-    {{ source_last_digits}}
+    {{cc_type_img}}
+    {{source_last_digits}}
   </span>
   <br />
-  <span class="full-name">{{ source_name }}</span>
+  <span class="full-name">{{source_name}}</span>
 {{/credit_card?}}
 {{^credit_card?}}
-  <span>{{ payment_method_name }}</span>
+  <span>{{payment_method_name}}</span>
 {{/credit_card?}}

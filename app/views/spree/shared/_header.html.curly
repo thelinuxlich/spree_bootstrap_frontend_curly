@@ -2,12 +2,12 @@
   <header id="header" data-hook>
     <div class="container">
         <figure id="logo" class="col-md-4" data-hook>
-          {{ logo_img }}
+          {{logo_img}}
         </figure>
-        {{ nav_bar }}
+        {{nav_bar}}
     </div>
   </header>
   <div class="container">
-    {{ main_nav_bar }}
+    {{main_nav_bar}}
   </div>
 </div>

@@ -1,4 +1,4 @@
 <tr class="total">
-    <td colspan="4" align="right"><strong>{{ label }}</strong></td>
-    <td class="total"><span>{{ total }}</span></td>
+    <td colspan="4" align="right"><strong>{{label}}</strong></td>
+    <td class="total"><span>{{total}}</span></td>
 </tr>

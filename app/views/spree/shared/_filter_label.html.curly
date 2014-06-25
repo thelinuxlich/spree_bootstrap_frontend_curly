@@ -1,8 +1,8 @@
 <li class="list-group-item">
   <input type="checkbox"
-         id="{{ label }}"
-         name="search[{{ filter_scope }}][]"
-         value="{{ value }}"
-         {{ label_checked }} />
-  <label class="nowrap" for="{{ label }}"> {{ name }}</label>
+         id="{{label}}"
+         name="search[{{filter_scope}}][]"
+         value="{{value}}"
+         {{label_checked}} />
+  <label class="nowrap" for="{{label}}"> {{name}}</label>
 </li>

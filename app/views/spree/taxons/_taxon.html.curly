@@ -1,4 +1,4 @@
 <div class="taxon" data-hook="taxon">
-  <h5 class="subtaxon-title">{{ taxon_link }}</h5>
-  {{ products }}
+  <h5 class="subtaxon-title">{{taxon_link}}</h5>
+  {{products}}
 </div>

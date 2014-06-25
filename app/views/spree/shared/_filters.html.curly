@@ -1,7 +1,7 @@
 {{#filters?}}
   <form method="get" id="sidebar_products_search" action accept-charset="UTF-8">
-    {{ hidden_field_per_page }}
-    {{ filters }}
-    <input type="submit" value="{{ t 'search' }}" name="commit" class="btn btn-primary">
+    {{hidden_field_per_page}}
+    {{filters}}
+    <input type="submit" value="{{translate text='search'}}" name="commit" class="btn btn-primary">
   </form>
 {{/filters?}}

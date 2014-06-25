@@ -1,18 +1,18 @@
 class Spree::Orders::AdjustmentRowPresenter < Spree::CommonPresenter
 
-    presents :item
-    presents :type
-    presents :order
+  presents :item
+  presents :type
+  presents :order
 
-    def type
-        @type
-    end
+  def type
+    @type
+  end
 
-    def label
-        @item[0]
-    end
+  def label
+    @item[:name]
+  end
 
-    def total
-        Spree::Money.new(@item[1].sum(&:amount), :currency => @order.currency)
-    end
+  def total
+    Spree::Money.new(@item[:obj].sum(&:amount), currency: @order.currency)
+  end
 end

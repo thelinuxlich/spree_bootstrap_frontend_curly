@@ -1,12 +1,12 @@
 class Spree::Shared::UserFormPresenter < Spree::CommonPresenter
 
-    presents :f
+  presents :f
 
-    def email_value
-        @f.email
-    end
+  def email_value
+    @f.email
+  end
 
-    def password_value
-        @f.password
-    end
+  def password_value
+    @f.password
+  end
 end

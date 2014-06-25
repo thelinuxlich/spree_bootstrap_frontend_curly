@@ -1,18 +1,18 @@
-<h3>{{ t 'order_summary' }}</h3>
+<h3>{{translate text='order_summary'}}</h3>
 
 <table class="table" data-hook="order_summary">
   <tbody>
     <tr data-hook="item_total">
-      <td><strong>{{ t 'item_total' }}:</strong></td>
-      <td><strong>{{ total }}</strong></td>
+      <td><strong>{{translate text='item_total'}}:</strong></td>
+      <td><strong>{{total}}</strong></td>
     </tr>
 
     {{#line_item_adjustments?}}
       <tbody data-hook="order_details_promotion_adjustments">
         {{#promotion_adjustments}}
           <tr class="total">
-            <td>{{ label }}</td>
-            <td>{{ total }}</td>
+            <td>{{label}}</td>
+            <td>{{total}}</td>
           </tr>
         {{/promotion_adjustments}}
       </tbody>
@@ -21,8 +21,8 @@
     <tbody data-hook="order_details_tax_adjustments">
       {{#tax_adjustments}}
         <tr class="total">
-          <td>{{ label }}</td>
-          <td>{{ total }}</td>
+          <td>{{label}}</td>
+          <td>{{total}}</td>
         </tr>
       {{/tax_adjustments}}
     </tbody>
@@ -30,12 +30,12 @@
     {{#checkout_steps_delivery?}}
       <tr data-hook="shipping_total">
       {{#shipment_total?}}
-        <td>{{ t 'shipping_total' }}</td>
-        <td>{{ shipment_total }}</td>
+        <td>{{translate text='shipping_total'}}</td>
+        <td>{{shipment_total}}</td>
       {{/shipment_total?}}
       {{^shipment_total?}}
-        <td><strong>{{ t 'free_shipping' }}</strong></td>
-        <td>{{ t 'free_shipping_amount' }}</td>
+        <td><strong>{{translate text='free_shipping'}}</strong></td>
+        <td>{{translate text='free_shipping_amount'}}</td>
       {{/shipment_total?}}
       </tr>
     {{/checkout_steps_delivery?}}
@@ -44,16 +44,16 @@
       <tbody id="summary-order-charges" data-hook>
         {{#eligible_adjustments}}
           <tr class="total">
-            <td>{{ label }}: </td>
-            <td>{{ total }}</td>
+            <td>{{label}}: </td>
+            <td>{{total}}</td>
           </tr>
         {{/eligible_adjustments}}
       </tbody>
     {{/eligible_adjustments?}}
 
     <tr data-hook="order_total">
-      <td><strong>{{ t 'order_total' }}:</strong></td>
-      <td><strong><span id='summary-order-total' class="lead text-primary">{{ order_total }}</span></strong></td>
+      <td><strong>{{translate text='order_total'}}:</strong></td>
+      <td><strong><span id='summary-order-total' class="lead text-primary">{{order_total}}</span></strong></td>
     </tr>
   </tbody>
 </table>
