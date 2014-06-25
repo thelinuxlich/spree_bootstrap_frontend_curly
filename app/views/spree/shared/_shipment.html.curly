@@ -1,4 +1,4 @@
 <div>
   <i class='icon-truck'></i>
-  {{ t 'shipment_details' }}
+  {{translate text='shipment_details'}}
 </div>

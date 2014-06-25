@@ -1,36 +1,36 @@
 <div class="well clearfix">
-  {{ credit_card_image }}
+  {{credit_card_image}}
   <p class="field">
-    <label for="name_on_card_{{ payment_method_id }}">{{ t 'name_on_card'}}</label>
+    <label for="name_on_card_{{payment_method_id}}">{{translate text='name_on_card'}}</label>
     <span class="required">*</span><br />
-    <input type="text" name="{{ param_prefix }}[name]" value="{{name_on_card_value}}" class='form-control required'>
+    <input type="text" name="{{param_prefix}}[name]" value="{{name_on_card_value}}" class='form-control required'>
   </p>
 
   <p class="field" data-hook="card_number">
     <label for="card_number">{{t 'card_number'}}</label>
     <span class="required">*</span><br />
-    <input type="text" name="{{ param_prefix }}[number]"
+    <input type="text" name="{{param_prefix}}[number]"
       value="" size="19" id="card_number" class="form-control required cardNumber" maxlength="19" autocomplete="off">
     &nbsp;
     <span id="card_type" style="display:none;">
-      ( <span id="looks_like" >{{ t 'card_type_is' }} <span id="type"></span></span>
-        <span id="unrecognized">{{ t 'unrecognized_card_type' }}</span>
+      ( <span id="looks_like" >{{translate text='card_type_is'}} <span id="type"></span></span>
+        <span id="unrecognized">{{translate text='unrecognized_card_type'}}</span>
       )
     </span>
   </p>
   <div class="row">
     <div class="col-md-8 field" data-hook="card_expiration">
-      <label for="card_expiry">{{ t 'expiration' }}</label>
+      <label for="card_expiry">{{translate text='expiration'}}</label>
       <span class="required">*</span><br />
-      <input type="text" name="{{ param_prefix }}[expiry]" id="card_expiry" class="form-control required cardExpiry" placeholder="MM / YY">
+      <input type="text" name="{{param_prefix}}[expiry]" id="card_expiry" class="form-control required cardExpiry" placeholder="MM / YY">
     </div>
     <div class="col-md-4 field" data-hook="card_code">
-      <label for="card_code">{{ t 'card_code' }}</label>
+      <label for="card_code">{{translate text='card_code'}}</label>
       <span class="required">*</span><br />
-      <input type="text" name="{{ param_prefix }}[verification_value]" id="card_code" class="form-control required cardCode" size="5">
-      {{ cvv_link }}
+      <input type="text" name="{{param_prefix}}[verification_value]" id="card_code" class="form-control required cardCode" size="5">
+      {{cvv_link}}
     </div>
   </div>
 
-  <input type="hidden" name="{{ param_prefix }}[cc_type]" id="cc_type" class="ccType">
+  <input type="hidden" name="{{param_prefix}}[cc_type]" id="cc_type" class="ccType">
 </div>

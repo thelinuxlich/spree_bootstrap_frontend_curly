@@ -1,3 +1,4 @@
 <div data-hook="products">
-    {{ products }}
+  {{products}}
+  {{banners zone_title="teste"}}
 </div>

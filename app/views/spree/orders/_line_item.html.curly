@@ -1,29 +1,29 @@
 <tr class="line-item">
   <td class="cart-item-image" data-hook="cart_item_image">
-    {{ variant_image }}
+    {{variant_image}}
   </td>
   <td class="cart-item-description" data-hook="cart_item_description">
-    <h4>{{ variant_product_link }}</h4>
-    {{ variant_options }}
+    <h4>{{variant_product_link}}</h4>
+    {{variant_options}}
     {{#line_item_on_insufficient_stock_lines?}}
       <span class="out-of-stock">
-        {{ t 'out_of_stock' }}&nbsp;&nbsp;<br />
+        {{translate text='out_of_stock'}}&nbsp;&nbsp;<br />
       </span>
     {{/line_item_on_insufficient_stock_lines?}}
     <span class="line-item-description" data-hook="line_item_description">
-      {{ line_item_description }}
+      {{line_item_description}}
     </span>
   </td>
   <td class="lead text-primary cart-item-price" data-hook="cart_item_price">
-    {{ line_item_single_money }}
+    {{line_item_single_money}}
   </td>
   <td class="cart-item-quantity" data-hook="cart_item_quantity">
-    <input type="number" name="line_items[quantity]" min="0" class="form-control line_item_quantity" size="5" value="{{ line_item 'quantity'}}">
+    <input type="number" name="line_items[quantity]" min="0" class="form-control line_item_quantity" size="5" value="{{line_item field='quantity'}}">
   </td>
   <td class="lead text-primary cart-item-total" data-hook="cart_item_total">
-    {{ total }}
+    {{total}}
   </td>
   <td class="cart-item-delete" data-hook="cart_item_delete">
-    {{ delete_line_item_link }}
+    {{delete_line_item_link}}
   </td>
 </tr>

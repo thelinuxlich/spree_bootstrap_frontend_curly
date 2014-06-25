@@ -1,14 +1,14 @@
 {{#properties?}}
-  <h3 class="product-section-title">{{ t 'properties' }}</h3>
+  <h3 class="product-section-title">{{translate text='properties'}}</h3>
   <table id="product-properties" class="table table-striped" data-hook>
     <tbody>
       {{#properties}}
-        <tr class="{{ property_css_class }}">
-          <td><strong>{{ presentation }}</strong></td>
-          <td>{{ value }}</td>
+        <tr class="{{property_css_class}}">
+          <td><strong>{{presentation}}</strong></td>
+          <td>{{value}}</td>
         </tr>
       {{/properties}}
-      {{ reset_cycle_properties }}
+      {{reset_cycle_properties}}
     </tbody>
   </table>
 {{/properties?}}

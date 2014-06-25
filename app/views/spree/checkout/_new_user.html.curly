@@ -1,20 +1,20 @@
 <div class="col-md-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ t 'create_new_account' }}</h3>
+      <h3 class="panel-title">{{translate 'create_new_account'}}</h3>
     </div>
     <div id="new-customer" class="panel-body" data-hook="login">
-    <form action="{{ registration_url }}">
-      {{ secure_token }}
+    <form action="{{registration_url}}">
+      {{secure_token}}
       <div data-hook="signup_inside_form">
-        {{ user_form }}
+        {{user_form}}
         <p>
-        <input type="submit" name="commit" value="{{ t 'create' }}" class='btn btn-lg btn-success btn-block'></p>
+        <input type="submit" name="commit" value="{{translate text='create'}}" class='btn btn-lg btn-success btn-block'></p>
       </div>
     </form>
     <div class="text-center">
-      {{ t 'or' }}
-        {{ login_as_existing_link }}
+      {{translate text='or'}}
+        {{login_as_existing_link}}
     </div>
     <div data-hook="login_extras"></div>
   </div>

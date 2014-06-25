@@ -1,15 +1,15 @@
 {{#images?}}
   <ul id="product-thumbnails" class="thumbnails list-inline" data-hook>
     {{#images}}
-      <li class='tmb-all tmb-{{ image_dom_id }}'>
-        {{ image_link }}
+      <li class='tmb-all tmb-{{image_dom_id}}'>
+        {{image_link}}
       </li>
     {{/images}}
 
     {{#variants?}}
       {{#variants}}
-        <li class='vtmb tmb-{{ variant_dom_id }}'>
-          {{ variant_link }}
+        <li class='vtmb tmb-{{variant_dom_id}}'>
+          {{variant_link}}
         </li>
       {{/variants}}
     {{/variants?}}

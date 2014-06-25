@@ -1,8 +1,8 @@
 class Spree::Shared::ErrorPresenter < Spree::CommonPresenter
 
-    presents :error
+  presents :error
 
-    def msg
-        @error
-    end
+  def msg
+    @error
+  end
 end

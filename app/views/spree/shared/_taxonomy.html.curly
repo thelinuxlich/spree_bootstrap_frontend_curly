@@ -1,2 +1,2 @@
-<h4 class='taxonomy-root'>{{ name }}</h4>
-{{ taxonomy_tree }}
+<h4 class='taxonomy-root'>{{name}}</h4>
+{{taxonomy_tree}}

@@ -1,20 +1,20 @@
 <fieldset id="order_summary" data-hook>
-  <legend>{{ order_number }}</legend>
-  <h1>{{ title }}</h1>
+  <legend>{{order_number}}</legend>
+  <h1>{{title}}</h1>
 
   <div id="order" data-hook>
     {{#order_completed?}}
-      <h1>{{ t 'thank_you_for_your_order' }}</h1>
+      <h1>{{translate text='thank_you_for_your_order'}}</h1>
     {{/order_completed?}}
 
-    {{ order_details }}
+    {{order_details}}
 
     <br class="clear" />
 
     <p data-hook="links">
-      {{ back_to_store_link }}
+      {{back_to_store_link}}
       {{^order_completed?}}
-        {{ my_account_link }}
+        {{my_account_link}}
       {{/order_completed?}}
     </p>
   </div>

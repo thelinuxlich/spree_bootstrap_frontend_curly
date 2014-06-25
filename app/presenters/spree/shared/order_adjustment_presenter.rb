@@ -1,12 +1,12 @@
 class Spree::Shared::OrderAdjustmentPresenter < Spree::CommonPresenter
 
-    presents :adjustment
+  presents :adjustment
 
-    def label
-        @adjustment.label
-    end
+  def label
+    @adjustment.label
+  end
 
-    def total
-        @adjustment.display_amount.to_html
-    end
+  def total
+    @adjustment.display_amount.to_html
+  end
 end

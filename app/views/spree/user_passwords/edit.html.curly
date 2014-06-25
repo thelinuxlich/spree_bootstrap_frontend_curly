@@ -1,27 +1,27 @@
-{{ errors }}
+{{errors}}
 <div class="col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ t 'change_my_password' }}</h3>
+      <h3 class="panel-title">{{translate text='change_my_password'}}</h3>
     </div>
     <div class="panel-body">
-      <form class="edit_spree_user" id="edit_spree_user" action="{{ update_password_path }}" method="post">
-        {{ secure_token }}
+      <form class="edit_spree_user" id="edit_spree_user" action="{{update_password_path}}" method="post">
+        {{secure_token}}
         <input type="hidden" name="_method" value="put">
         <p>
-          <label for="spree_user[password]">{{ t 'password' }}</label>
+          <label for="spree_user[password]">{{translate text='password'}}</label>
           <br />
-          <input type="password" name="spree_user[password]" class="form-control" value="{{ user 'password' }}"
+          <input type="password" name="spree_user[password]" class="form-control" value="{{user field='password'}}"
           <br />
         </p>
         <p>
-          <label for="spree_user[password_confirmation]">{{ t 'confirm_password' }}</label>
+          <label for="spree_user[password_confirmation]">{{translate text='confirm_password'}}</label>
           <br />
-          <input type="password" name="spree_user[password_confirmation]" class="form-control" value="{{ user 'password_confirmation'}}"
+          <input type="password" name="spree_user[password_confirmation]" class="form-control" value="{{user field='password_confirmation'}}"
           <br />
         </p>
-        <input type="hidden" name="spree_user[reset_password_token" value="{{ user 'reset_password_token' }}"
-        <input type="submit" name="commit" value="{{ update_text }}" class="btn btn-lg btn-success btn-block">
+        <input type="hidden" name="spree_user[reset_password_token" value="{{user field='reset_password_token'}}"
+        <input type="submit" name="commit" value="{{update_text}}" class="btn btn-lg btn-success btn-block">
       </form>
     </div>
   </div>

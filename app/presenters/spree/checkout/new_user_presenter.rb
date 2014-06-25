@@ -1,12 +1,12 @@
 class Spree::Checkout::NewUserPresenter < Spree::CommonPresenter
 
-    presents :user
+  presents :user
 
-    def registration_url
-        spree.registration_path(@user)
-    end
+  def registration_url
+    spree.registration_path(@user)
+  end
 
-    def user_form
-        render partial: 'spree/shared/user_form', locals: { user: @user }
-    end
+  def user_form
+    render partial: 'spree/shared/user_form', locals: {user: @user}
+  end
 end

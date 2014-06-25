@@ -1,11 +1,12 @@
 <h1 class="taxon-title">{{taxon_name}}</h1>
 
 <div data-hook="taxon_products">
-  {{ products }}
+  {{products}}
 </div>
 
 {{^keywords?}}
   <div data-hook="taxon_children">
-    {{ taxon }}
+    {{taxon}}
   </div>
 {{/keywords?}}
+{{banners zone_title="teste"}}

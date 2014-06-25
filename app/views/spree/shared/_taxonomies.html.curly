@@ -1,5 +1,5 @@
 {{#taxonomies?}}
   <nav id="taxonomies" class="sidebar-item" data-hook>
-    {{ taxonomies_list }}
+    {{taxonomies_list}}
   </nav>
 {{/taxonomies?}}

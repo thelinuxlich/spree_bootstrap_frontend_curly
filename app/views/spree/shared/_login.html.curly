@@ -1,22 +1,22 @@
-<form class="new_spree_user" id="new_spree_user" action="{{ create_new_session_path }}" method="post">
+<form class="new_spree_user" id="new_spree_user" action="{{create_new_session_path}}" method="post">
   <fieldset id="password-credentials">
   <div style="display:none">
-    <input name="authenticity_token" type="hidden" value="{{ secure_token }}">
+    <input name="authenticity_token" type="hidden" value="{{secure_token}}">
   </div>
     <div class="form-group">
-      <input type="email" name="spree_user[email]" class="form-control" tabindex="1" placeholder="{{ t 'email' }}">
+      <input type="email" name="spree_user[email]" class="form-control" tabindex="1" placeholder="{{translate text='email'}}">
     </div>
     <div class="form-group">
-      <input type="password" name="spree_user[password]" class="form-control" tabindex="2" placeholder="{{ t 'password' }}">
+      <input type="password" name="spree_user[password]" class="form-control" tabindex="2" placeholder="{{translate text='password'}}">
     </div>
     <div class="checkbox">
       <label>
         <input type="checkbox" name="spree_user[remember_me]">
-        <label for="spree_user[remember_me]">{{ t 'remember_me' }}</label>
+        <label for="spree_user[remember_me]">{{translate text='remember_me'}}</label>
       </label>
     </div>
     <div class="form-group">
-      <input name="commit" type="submit" class="btn btn-lg btn-success btn-block" tabindex="3" value="{{ t 'login' }}">
+      <input name="commit" type="submit" class="btn btn-lg btn-success btn-block" tabindex="3" value="{{translate text='login'}}">
     </div>
   </fieldset>
 </form>

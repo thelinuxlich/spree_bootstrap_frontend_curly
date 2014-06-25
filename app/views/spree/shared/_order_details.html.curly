@@ -4,31 +4,31 @@
 
     {{#order_has_step_delivery?}}
       <div class="col-md-3" data-hook="order-ship-address">
-        <h4>{{ t 'shipping_address' }} {{ edit_address_link }}</h4>
-        {{ address }}
+        <h4>{{translate text='shipping_address'}} {{edit_address_link}}</h4>
+        {{address}}
       </div>
     {{/order_has_step_delivery?}}
 
     <div class="col-md-3" data-hook="order-bill-address">
-      <h4>{{ t 'billing_address' }} {{ edit_address_link }}</h4>
-      {{ billing_address }}
+      <h4>{{translate text='billing_address'}} {{edit_address_link}}</h4>
+      {{billing_address}}
     </div>
 
     {{#own_order_has_step_delivery?}}
       <div class=" col-md-3">
-        <h4>{{ t 'shipments' }} {{ edit_delivery_link }}</h4>
+        <h4>{{translate text='shipments'}} {{edit_delivery_link}}</h4>
         <div class="delivery">
-          {{ shipments }}
+          {{shipments}}
         </div>
-        {{ shipment_tracking }}
+        {{shipment_tracking}}
       </div>
     {{/own_order_has_step_delivery?}}
   {{/order_has_step_address?}}
 
   <div class="col-md-3">
-    <h4>{{ t 'payment_information' }}</h4>
+    <h4>{{translate text='payment_information'}}</h4>
     <div class="payment-info">
-      {{ payments }}
+      {{payments}}
     </div>
   </div>
 
@@ -45,46 +45,46 @@
 
   <thead data-hook>
     <tr class="active" data-hook="order_details_line_items_headers">
-      <th colspan="2">{{ t 'item' }}</th>
-      <th class="price">{{ t 'price' }}</th>
-      <th class="qty">{{ t 'qty' }}</th>
-      <th class="total"><span>{{ t 'total' }}</span></th>
+      <th colspan="2">{{translate text='item'}}</th>
+      <th class="price">{{translate text='price'}}</th>
+      <th class="qty">{{translate text='qty'}}</th>
+      <th class="total"><span>{{translate text='total'}}</span></th>
     </tr>
   </thead>
 
   <tbody data-hook>
-    {{ order_line_items }}
+    {{order_line_items}}
   </tbody>
   <tfoot id="order-total" data-hook="order_details_total">
     <tr class="warning total">
-      <td colspan="4" align="right"><b>{{ t 'order_total' }}:</b></td>
-      <td class="total"><span id="order_total" class="lead text-primary">{{ order_display_total }}</span></td>
+      <td colspan="4" align="right"><b>{{translate text='order_total'}}:</b></td>
+      <td class="total"><span id="order_total" class="lead text-primary">{{order_display_total}}</span></td>
     </tr>
   </tfoot>
 
   <tfoot id="subtotal" data-hook="order_details_subtotal">
     <tr class="total" id="subtotal-row">
-      <td colspan="4" align="right"><b>{{ t 'subtotal' }}:</b></td>
-      <td class="total"><span>{{ order_display_item_total }}</span></td>
+      <td colspan="4" align="right"><b>{{translate text='subtotal'}}:</b></td>
+      <td class="total"><span>{{order_display_item_total}}</span></td>
     </tr>
   </tfoot>
   {{#order_line_item_adjustments?}}
     {{#order_all_adjustments_promotion_eligible?}}
       <tfoot id="price-adjustments" data-hook="order_details_price_adjustments">
-        {{ adjustments_promotion }}
+        {{adjustments_promotion}}
      </tfoot>
     {{/order_all_adjustments_promotion_eligible?}}
   {{/order_line_item_adjustments?}}
 
   {{#order_all_adjustments_tax?}}
     <tfoot id="tax-adjustments" data-hook="order_details_tax_adjustments">
-      {{ adjustments_tax }}
+      {{adjustments_tax}}
     </tfoot>
   {{/order_all_adjustments_tax?}}
   <tfoot id='shipment-total'>
-    {{ order_shipments }}
+    {{order_shipments}}
   </tfoot>
   <tfoot id="order-charges" data-hook="order_details_adjustments">
-    {{ order_adjustments }}
+    {{order_adjustments}}
   </tfoot>
 </table>

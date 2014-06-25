@@ -1,13 +1,13 @@
 <fieldset id="password-credentials">
   <div class="form-group">
-    <input type="email" class="form-control" placeholder="{{ t 'email' }}" name="user[email]" value="{{ email_value }}">
+    <input type="email" class="form-control" placeholder="{{translate text='email'}}" name="user[email]" value="{{email_value}}">
   </div>
   <hr />
   <div class="form-group">
-    <input type="password" name="user[password]" class="form-control" placeholder="{{ t 'password' }}" value="{{ password_value }}">
+    <input type="password" name="user[password]" class="form-control" placeholder="{{translate text='password'}}" value="{{password_value}}">
   </div>
   <div class="form-group">
-    <input type="password" name="user[password_confirmation]" class="form-control" placeholder="{{ t 'confirm_password' }}">
+    <input type="password" name="user[password_confirmation]" class="form-control" placeholder="{{translate text='confirm_password'}}">
   </div>
 </fieldset>
 <div data-hook="signup_below_password_fields"></div>
